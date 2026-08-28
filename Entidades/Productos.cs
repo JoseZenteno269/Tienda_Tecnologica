@@ -9,7 +9,7 @@ namespace Entidades
         private String codigo; 
         private String nombre; 
         private String descripcion; 
-        private float precio; 
+        private double precio; 
         private int stock; 
         private String imagen; 
         private Boolean activo; 
@@ -86,7 +86,7 @@ namespace Entidades
             }
         }
 
-        public float Precio
+        public double Precio
         {
             get
             {
