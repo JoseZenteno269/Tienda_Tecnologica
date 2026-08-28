@@ -1,21 +1,30 @@
 const host = "https://localhost:7040/api/Productos"
 
-import { crearCelda } from "./funciones"
+import { crearCelda } from "./funciones.js"
 
-async function cargarProductos() {
+const mensaje = document.getElementById("lbl_mensaje"); 
+
+mensaje.textContent = ""; 
+
+async function cargarProductos() {                                                          
     const respuesta_prod = await fetch(`${host}/${"productos"}`); 
+
+    if(!respuesta_prod.ok){
+        mensaje.textContent = "No se pudo conectar a la base de datos"; 
+    }
+
     const productos = await respuesta_prod.json(); 
     const tablacuerpo = document.getElementById("cuerpo_tabla"); 
 
-    tablacuerpo.replaceChild(); 
+    tablacuerpo.innerHTML = ""; 
 
-    productos.array.forEach(prod => {
+    productos.forEach(prod => {
         const tr = document.createElement("tr"); 
 
         let codigo = crearCelda(prod.codigo); 
         let nombre = crearCelda(prod.nombre); 
         let descripcion = crearCelda(prod.descripcion); 
-        let precio = crearCelda(prod.precio); 
+        let precio = crearCelda(prod.precio);
         let stock = crearCelda(prod.stock); 
         let imagen = crearCelda(prod.imagen); 
 
