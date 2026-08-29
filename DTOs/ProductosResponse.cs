@@ -10,5 +10,6 @@ namespace DTOs
         public double  precio {get; set;}
         public int stock {get; set;}
         public String imagen {get; set;}
+        public String tipo {get; set;}
     }
 }

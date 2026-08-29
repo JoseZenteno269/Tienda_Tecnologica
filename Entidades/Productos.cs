@@ -12,7 +12,8 @@ namespace Entidades
         private double precio; 
         private int stock; 
         private String imagen; 
-        private Boolean activo; 
+        private Boolean activo;
+        private int idtipo;  
 
         public Productos()
         {
@@ -24,10 +25,11 @@ namespace Entidades
             stock = 0; 
             imagen = "no definido"; 
             activo = true; 
+            idtipo = 0; 
         }
 
         public Productos(String idproducto, String codigo, String nombre, String descripcion,
-         float precio, int stock, String imagen, Boolean activo)
+         float precio, int stock, String imagen, Boolean activo, int idtipo)
         {
             this.idproducto = idproducto; 
             this.codigo = codigo; 
@@ -37,6 +39,7 @@ namespace Entidades
             this.stock = stock; 
             this.imagen = imagen; 
             this.activo = activo; 
+            this.idtipo = idtipo; 
         }
 
         public String IdProducto
@@ -130,6 +133,15 @@ namespace Entidades
             set
             {
                 activo = value; 
+            }
+        }
+
+        public int IdTipo{
+            get{
+                return idtipo; 
+            }
+            set{
+                idtipo = value; 
             }
         }
     }

@@ -15,10 +15,10 @@ namespace Controllers
         [HttpGet("productos")]
         public IActionResult ObtenerProductos()
         {
-            DataTable table = negocioProductos.getTablaProductos(); 
+            DataTable table = negocioProductos.getTablaProductos();
 
             List<ProductosResponse> lista = new();
-
+            
             foreach(DataRow fila in table.Rows)
             {
                 lista.Add(new ProductosResponse
@@ -28,10 +28,11 @@ namespace Controllers
                     descripcion = fila["Descripcion_P"].ToString(),
                     precio = Convert.ToDouble(fila["Precio_P"]),
                     stock = Convert.ToInt32(fila["Stock_P"]),
-                    imagen = fila["Imagen_P"].ToString()
+                    imagen = fila["Imagen_P"].ToString(),
+                    tipo = fila["Tipo_T"].ToString()
                 });
             }
-
+            
             return Ok(lista); 
         }
     }

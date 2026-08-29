@@ -15,7 +15,7 @@ namespace Datos
 
         public DataTable getTablaProductos()
         {
-            DataTable tabla = datos.ObtenerTabla("Productos", "SELECT IdProducto_P, Codigo_P, Nombre_P, Descripcion_P, Precio_P, Stock_P, Imagen_P, Activo_P FROM Productos"); 
+            DataTable tabla = datos.ObtenerTabla("Productos", "SELECT Codigo_P, Nombre_P, Tipo_T, IdTipo_P, Descripcion_P, Precio_P, Stock_P, Imagen_P FROM Productos p INNER JOIN Tipo t ON p.IdTipo_P = t.IdTipo_T"); 
             return tabla; 
         }
     }

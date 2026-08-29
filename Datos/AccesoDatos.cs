@@ -7,7 +7,7 @@ namespace Datos
     public class AccesoDatos
     {
         // private readonly IConfiguration? configuration;
-        private readonly string ruta = "Server=R7ASUSROG\\SQLEXPRESS;Database=CarritoComprasDB;Trusted_Connection=True;TrustServerCertificate=True;";
+        private readonly string ruta = @"Server=R7ASUSROG\SQLEXPRESS;Database=CarritoComprasDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
         public AccesoDatos()
         {
